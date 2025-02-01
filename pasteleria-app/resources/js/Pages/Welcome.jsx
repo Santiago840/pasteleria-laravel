@@ -1,26 +1,66 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link } from "@inertiajs/react";
 
+//para que otros archivos lo puedan ver
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
         document
-            .getElementById('screenshot-container')
-            ?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
+            .getElementById("screenshot-container")
+            ?.classList.add("!hidden");
+        document.getElementById("docs-card")?.classList.add("!row-span-1");
         document
-            .getElementById('docs-card-content')
-            ?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
+            .getElementById("docs-card-content")
+            ?.classList.add("!flex-row");
+        document.getElementById("fondo")?.classList.add("!hidden");
     };
 
     return (
         <>
-            <Head title="Welcome" />
-            <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+            <Head title="Inicio" />
+
+            <div id="contenedor" className="bg-black text-white">
                 <img
-                    id="background"
-                    className="absolute -left-20 top-0 max-w-[877px]"
-                    src="https://laravel.com/assets/img/welcome/background.svg"
+                    className="w-1/2 max-h-full h-1/2 max-w-full 
+                    flex min-h-screen absolute -right-0 bottom-0 max-w-full h-auto"
+                    id="fondo"
+                    src="/images/inicio/pastel.jpg"
                 />
+
+                <div className="relative flex justify-left items-center h-screen">
+                    <main id="contenido">
+                        <div
+                            id="panel"
+                            className=" absolute top-1/2 left-10 transform 
+                            -translate-y-1/2 grid gap-1 bg-blue-400 text-8xl 
+                            text
+                            text-center"
+                        >
+                            <h1>PASTELERÍA</h1>
+                            <div
+                                id="botones"
+                                className="grid gap-1"
+                            >
+                                <button>
+                                    <Link href="/catalogo">CATÁLOGO</Link>
+                                </button>
+                                <div className="grid gap-1 grid-cols-2 text-x1">
+                                    <button>
+                                        <Link href="/login">Ingresar</Link>
+                                    </button>
+                                    <button>
+                                        <Link href="/register">Registrar</Link>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            {/* <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+                <img
+                    src="/images/inicio/pastel.jpg"
+                />
+                
                 <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                         <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
@@ -355,7 +395,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </footer>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }
