@@ -29,25 +29,26 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     <main id="contenido">
                         <div
                             id="panel"
-                            className=" absolute top-1/2 left-10 transform 
-                            -translate-y-1/2 grid gap-1 bg-blue-400 text-8xl 
-                            text
+                            className="font-josefin absolute top-1/2 lg:left-10 left-10 transform 
+                            -translate-y-1/2 grid gap-1 
                             text-center"
                         >
-                            <h1>PASTELERÍA</h1>
+                            <h1 className="border-b pb-1 text-lg md:text-6xl sm:text-4xl lg:text-8xl">
+                                PASTELERÍA
+                            </h1>
                             <div
                                 id="botones"
-                                className="grid gap-1"
+                                className="text-xs md:text-2xl lg:text-4xl md:left-0 felx-col mt-8"
                             >
-                                <button>
+                                <button className="border p-2 hover:bg-white hover:text-black active:bg-black  active:text-white">
                                     <Link href="/catalogo">CATÁLOGO</Link>
                                 </button>
-                                <div className="grid gap-1 grid-cols-2 text-x1">
-                                    <button>
-                                        <Link href="/login">Ingresar</Link>
+                                <div className="grid gap-1 sm:grid-cols-2 mt-5">
+                                    <button className="border p-2 sm:mr-0 md:mr-4 lg:mr-6 hover:text-black hover:bg-white active:bg-black  active:text-white">
+                                        <Link href="/login">INGRESAR</Link>
                                     </button>
-                                    <button>
-                                        <Link href="/register">Registrar</Link>
+                                    <button className="border p-2 sm:ml-0 md:ml-4 lg:ml-6 hover:bg-white hover:text-black active:bg-black  active:text-white">
+                                        <Link href="/register">REGISTRAR</Link>
                                     </button>
                                 </div>
                             </div>
