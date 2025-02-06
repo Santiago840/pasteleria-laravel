@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,10 @@ Route::get('/catalogo', function () {
 Route::resource('categoria', CategoriaController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
+
+Route::resource('producto', ProductoController::class)
+->only(['index', 'store', 'update', 'destroy'])
+->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';
 
