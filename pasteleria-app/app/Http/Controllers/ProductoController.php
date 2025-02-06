@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
-use Illuminate\Http\RedirectResponse;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Inertia\Response;
-use Inertia\Inertia;
+use Illuminate\Http\Response as HttpResponse;
+use Inertia\Response as InertiaResponse;
+
 use function Termwind\render;
 
 class ProductoController extends Controller
@@ -15,11 +15,9 @@ class ProductoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():Response
+    public function index()
     {
-        return Inertia::render('Productos/Index',[
-            'productos' => Producto::all(),
-        ]);
+        
     }
 
     /**
@@ -33,23 +31,9 @@ class ProductoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request):RedirectResponse
+    public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'=>'required|string|max:100',
-            'description',
-            'price',
-            'discount',
-            'size',
-            'quantity',
-            'validity',
-            'aviability',
-            'imageProduct'
-        ]);
-
-        Producto::create($validated);
-
-        return redirect(route('productos.index'));
+        //
     }
 
     /**
@@ -65,20 +49,15 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-
-        
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Producto $producto): RedirectResponse
+    public function update(Request $request, Producto $producto)
     {
-        Gate::authorize('update', $producto);
-
-        $producto->update();
-
-        return redirect(route('productos.index'));
+        //
     }
 
     /**
@@ -86,8 +65,6 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        Gate::authorize('delete', $producto);
-
-        return redirect(route('productos.index'));
+        //
     }
 }
