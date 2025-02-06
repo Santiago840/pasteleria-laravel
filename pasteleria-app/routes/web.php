@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -25,14 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/catalogo', function () {
+Route::get('/catalogo', function(){
     return Inertia::render('Catalogo/Catalogo');
 });
 
-Route::resource('categoria', CategoriaController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
 //middleware for admin or employer
