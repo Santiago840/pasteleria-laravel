@@ -65,10 +65,6 @@ class CategoriaController extends Controller
     public function update(Request $request, Categoria $categoria):RedirectResponse{
         Gate::authorize('update', $categoria);
 
-        $validated = $request->validate([
-            'name' => 'required|string|max:100',
-        ]);
-
         $categoria->update();
 
         return redirect(route('categorias.index'));
