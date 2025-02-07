@@ -24,9 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/catalogo', function(){
-    return Inertia::render('Catalogo/Catalogo');
-});
+Route::get('/catalogo', function () {
+    return Inertia::render('Catalogo/admin/Catalogo');
+})->name('catalogoAdmin');
 
 require __DIR__.'/auth.php';
 
