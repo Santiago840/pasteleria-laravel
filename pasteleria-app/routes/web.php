@@ -34,7 +34,7 @@ Route::get('/categoria', function(){
     return Inertia::render('Categoria/Categoria');
 })->middleware('auth', 'verified')->name('categoria');
 
-Route::resource('categoria', CategoriaController::class)
+Route::resource('categorias', CategoriaController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
