@@ -1,0 +1,7 @@
+1.- restricciones
+
+2.- crear componente para que solamente sea un icono y se determine su tamaño, nombre desde fontawesome
+
+CatalogoAdmin
+1.- cuando no haya ninguna respuesta de placeholder ponerle 'buscar....'
+

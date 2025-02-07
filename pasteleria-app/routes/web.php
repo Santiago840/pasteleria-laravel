@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/catalogo', function () {
-    return Inertia::render('Catalogo/Catalogo');
-});
+    return Inertia::render('Catalogo/admin/Catalogo');
+})->name('catalogoAdmin');
 
 Route::resource('categoria', CategoriaController::class)
     ->only(['index', 'store', 'update', 'destroy'])
