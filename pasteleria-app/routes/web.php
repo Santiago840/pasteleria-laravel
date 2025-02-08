@@ -30,18 +30,11 @@ Route::get('/catalogo', function () {
     return Inertia::render('Catalogo/admin/Catalogo');
 })->name('catalogoAdmin');
 
-Route::get('/categoria', function(){
-    return Inertia::render('Categoria/Categoria');
-})->middleware('auth', 'verified')->name('categoria');
-
-Route::resource('categorias', CategoriaController::class)
-    ->only(['index', 'store', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
-
 Route::resource('producto', ProductoController::class)
 ->only(['index', 'store', 'update', 'destroy'])
 ->middleware(['auth', 'verified']);
 
+require __DIR__ . '/categoria.php';
 require __DIR__ . '/auth.php';
 
 //middleware for admin or employer
