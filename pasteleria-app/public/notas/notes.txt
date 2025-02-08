@@ -4,4 +4,4 @@
 
 CatalogoAdmin
 1.- cuando no haya ninguna respuesta de placeholder ponerle 'buscar....'
-
+2. verificar maxlength
