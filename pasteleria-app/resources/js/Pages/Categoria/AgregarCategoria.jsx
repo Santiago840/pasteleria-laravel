@@ -6,20 +6,20 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm } from "@inertiajs/react";
 
 export default function AgregarCategoria() {
-    const{data, post, processing} = useForm({
-        nombre: '',
+    const{data, setData, post, processing} = useForm({
+        name: '',
     });
 
     function submit(e){
         e.preventDefault()
-        post('/agregarCategoria')
+        post(route('categorias.store'))
     }
 
     return (
         <form onSubmit={submit}>
             <div>
                 <InputLabel value={"Nombre"} labelFor="nombre" />
-                <TextInput type={"text"} name="nombre" value={data.nombre} onChange= {e => setData('nombre', e.target.value)} />
+                <TextInput type={"text"} name="nombre" value={data.name} onChange= {e => setData('name', e.target.value)} />
             </div>
             <div>
                 <PrimaryButton disabled={processing}>Agregar</PrimaryButton>
