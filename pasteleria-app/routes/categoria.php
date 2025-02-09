@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/categoria', function () {
-    return Inertia::render('Categoria/Categoria');
+    return Inertia::render('Categoria/Index');
 })->middleware(['verified', 'auth'])->name('categoria');
 
 Route::get('/agregarCategoria', function(){
-    return Inertia::render('Categoria/AgregarCategoria');
+    return Inertia::render('Categoria/Index');
 })->middleware(['auth', 'verified'])->name('agregarCategoria');
 
 Route::get('/editarCategoria', function(){
