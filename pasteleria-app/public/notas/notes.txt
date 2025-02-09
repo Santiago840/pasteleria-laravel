@@ -1,7 +1,17 @@
+Generales
+1.- crear ruta / para usuarios en general
+2.- crear ruta /admin para administrador
+
+
 1.- restricciones
 
 2.- crear componente para que solamente sea un icono y se determine su tamaño, nombre desde fontawesome
 
 CatalogoAdmin
 1.- cuando no haya ninguna respuesta de placeholder ponerle 'buscar....'
-2. verificar maxlength
+
+Categorías Admin
+1. labelFor
+2. MaxLenght
+
+
